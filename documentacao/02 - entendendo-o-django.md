@@ -169,3 +169,8 @@ Bloco que deve ser adicionado.
 ...
 </form>
 ```
+
+## Django admin
+
+O djago fornece uma ferramenta que facilita o gerenciamentio dos dados salvos na aplicação, essa ferramenta é chamada de Django admin, o arquivo resposável por essa 
+
