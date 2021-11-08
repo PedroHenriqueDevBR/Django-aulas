@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import ImageEditView, ImageView
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ImageView.as_view(), name=ImageView.name),
-    path('<int:pk>', ImageEditView.as_view(), name=ImageEditView.name),
+    path('', views.PhotoListCreateView.as_view(), name=views.PhotoListCreateView.name),
+    path('<int:pk>', views.PhotoEditDeleteView.as_view(), name=views.PhotoEditDeleteView.name),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

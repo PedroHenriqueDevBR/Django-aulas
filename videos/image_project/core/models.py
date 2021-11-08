@@ -19,7 +19,6 @@ class Photo(models.Model):
         self.image = None
 
     def delete(self):
-        if self.has_image():
-            if os.path.isfile(self.image.path):
-                os.remove(self.image.path)
+        self.remove_image()
         super().delete()
+
