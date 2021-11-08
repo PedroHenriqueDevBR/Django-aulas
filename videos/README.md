@@ -12,7 +12,7 @@ Esse diretório armazena um exemplo de como nós podemos fazer a persistencia de
 
 ## Criação do projeto
 
-Primenramente vamos criar um projeto django com o seguinte comando:
+Primenramente vamos criar um projeto django com os seguintes comandos:
 
 ```bash
 # Cria o ambiente virtual
