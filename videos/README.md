@@ -1,6 +1,6 @@
-# Persistindo imagens no Django
+# Persistindo imagens no Django (Django Rest Framework)
 
-Esse diretório armazena um exemplo de como nós podemos fazer a persistencia de imagens no Django.
+A seguir apresento uma forma de persistir imagens no Django utilizando o Django Rest Framwwork.
 
 
 ## Requisitos
@@ -16,9 +16,9 @@ Primenramente vamos criar um projeto django com os seguintes comandos:
 
 ```bash
 # Cria o ambiente virtual
-virtualenv .venv
+python3 -m virtualenv .venv
 
-# Ativa o ambiente virtual
+# Ative o ambiente virtual
 source .venv/bin/activate
 
 # Instala as depedências necessárias
@@ -120,9 +120,7 @@ class Photo(models.Model):
 
     # Remove a imagen do diretório /media e deleta Photo
     def delete(self):
-        if self.has_image():
-            if os.path.isfile(self.image.path):
-                os.remove(self.image.path)
+        self.remove_image()
         super().delete()
 
 ```
@@ -217,6 +215,5 @@ class ImageEditView(APIView):
         photo.delete()
         # Retorna status 204, pois a imagem não existe mais
         return Response(status=status.HTTP_204_NO_CONTENT)
-
 
 ```
