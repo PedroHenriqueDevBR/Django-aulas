@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<nav class="white">
+    <div class="nav-wrapper container">
+        <a href="#!" class="brand-logo primary-text">DjangoVagas</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger primary-text"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="btn primary" href="mobile.html">Entrar</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="collapsible.html">Entrar</a></li>
+</ul>
+
+{% block content %}{% endblock %}
+
+{% endblock %}
